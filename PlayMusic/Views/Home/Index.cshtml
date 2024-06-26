@@ -1,0 +1,115 @@
+﻿
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .top-container {
+        height: 50%;
+    }
+
+    .bottom-container {
+        height: 50%;
+    }
+
+    .section {
+        flex: 1;
+        width: 300px;
+        height: 300px;
+        margin: 10px;
+        text-align: center;
+    }
+
+        .section img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+    .section1 {
+        flex: 1;
+        width: 600px;
+        height: 400px;
+        margin: 10px;
+        text-align: center;
+    }
+
+        .section1 img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+    .music-list-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .music-list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex: 1;
+        min-width: 300px;
+        margin: 10px;
+        text-align: left;
+    }
+
+        .music-list .item {
+            margin: 10px 0;
+        }
+
+        .music-list img {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .music-list .item a {
+            text-decoration: none;
+            color: black;
+            display: flex;
+            align-items: center;
+        }
+</style>
+
+<div class="container">
+    <div class="section">
+        <a href="#"><img src="~/Anh/den.png" alt="V-POP HIT"></a>
+        <h2><a href="#">Tuyệt Đỉnh V-POP HIT!</a></h2>
+    </div>
+    <div class="section">
+        <a href="#"><img src="~/Anh/nhacdo.png" alt="V-POP Hot"></a>
+        <h2><a href="#">V-POP Tháng 3 Có Gì Hot?</a></h2>
+    </div>
+    <div class="section">
+        <a href="#"><img src="~/Anh/sontung.png" alt="Nhạc Mới Mỗi Ngày"></a>
+        <h2><a href="#">Mix Nhạc Mới Mỗi Ngày</a></h2>
+    </div>
+</div>

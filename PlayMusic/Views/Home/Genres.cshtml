@@ -1,0 +1,107 @@
+﻿@model IEnumerable<PlayMusic.Models.Theloai>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thể Loại - Music App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            padding: 20px;
+        }
+
+        .theloai {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+            .theloai a {
+                width: 100px;
+                height: 100px;
+                margin: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                text-decoration: none;
+                border-radius: 10px;
+                text-align: center;
+                background-size: cover;
+                background-position: center;
+                background-image: linear-gradient(-243deg, #fb6b60 0%, #FF2E55 100%);
+            }
+
+        .nhamoi {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .audion {
+            display: flex;
+            align-items: center;
+            margin: 10px;
+        }
+
+        .imgg {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            margin-right: 10px;
+        }
+
+        .per-r {
+            display: flex;
+            flex-direction: column;
+        }
+
+            .per-r .title {
+                font-size: 16px;
+                font-weight: bold;
+                color: black;
+                text-decoration: none;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Thể Loại</h3>
+        <div class="theloai">
+            @foreach (var genre in Model)
+            {
+                <a href="@Url.Action("Genres", "Home", new { nametheloai = genre.IDtheloai })">
+                    @genre.Tentheloai
+                </a>
+            }
+        </div>
+        <hr style="width:85%" />
+        <h3 style="margin-left:50px">Danh Sách Nhạc Thể Loại:</h3>
+        <div class="nhamoi">
+            <div class="audion">
+                <a href="hienthinhac.aspx?idmusic=1">
+                    <img class="imgg" src="~/Images/sample.jpg" />
+                </a>
+                <p class="per-r">
+                    <a class="title" href="hienthinhac.aspx?idmusic=1">Sample Song</a><br />
+                    Sample Artist
+                </p>
+            </div>
+            <!-- Add more items here dynamically based on selected genre -->
+        </div>
+    </div>
+</body>
+</html>
+

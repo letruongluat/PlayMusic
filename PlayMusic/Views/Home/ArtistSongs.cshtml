@@ -1,0 +1,45 @@
+﻿@model IEnumerable<PlayMusic.Models.tblMusic>
+
+@{
+    ViewBag.Title = "Danh sách bài hát của " + ViewBag.ArtistName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <h2 style="text-align:center;">Danh sách bài hát của @ViewBag.ArtistName</h2>
+
+    <div class="song-list">
+        @foreach (var song in Model)
+        {
+            <div class="song-item">
+                <a href="@Url.Action("Details", "Song", new { id = song.iDmusic })">
+                    <img class="imgg" src="@Url.Content(song.Image)" alt="@song.DisplayName" />
+                    <p>@song.DisplayName</p>
+                </a>
+            </div>
+        }
+    </div>
+</div>
+<style>
+    .song-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .song-item {
+        text-align: center;
+        width: 150px;
+    }
+
+        .song-item img {
+            width: 100px;
+            height: 100px;
+            border-radius: 5px;
+        }
+
+        .song-item p {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+</style>

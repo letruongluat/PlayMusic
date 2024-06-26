@@ -1,0 +1,47 @@
+﻿@model IEnumerable<string>
+
+@{
+    ViewBag.Title = "Danh sách ca sĩ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h1 style="text-align:center;">Danh sách ca sĩ</h1>
+
+    <div class="artist-list">
+        @foreach (var artist in Model)
+        {
+            <div class="artist-item">
+                <a href="@Url.Action("ArtistSongs", "Home", new { artistName = artist })">
+                    <img src="@artist" alt="@artist" />
+                    <p>@artist</p>
+                </a>
+            </div>
+           
+        }
+    </div>
+</div>
+<style>
+    .artist-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .artist-item {
+        text-align: center;
+        width: 150px;
+    }
+
+        .artist-item img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        .artist-item p {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+</style>

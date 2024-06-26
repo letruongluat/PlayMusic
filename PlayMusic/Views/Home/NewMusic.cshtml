@@ -1,0 +1,134 @@
+﻿@model IEnumerable<PlayMusic.Models.tblMusic>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nhạc Mới - Music App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            padding: 20px;
+        }
+
+        .nhamoi {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .audion {
+            width: calc(20% - 20px); /* 20% width minus some margin for spacing */
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .imgg {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .per-r .title {
+            font-size: 16px;
+            font-weight: bold;
+            color: black;
+            text-decoration: none;
+        }
+
+        .k22 {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .aaaa2 {
+            width: calc(20% - 20px);
+            margin: 10px;
+            text-align: center;
+        }
+
+        .img-k22 {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h3 style="margin-left:10px"><a href="index.aspx" style="color:black">Trang chủ</a> - Nhạc Mới</h3>
+            <hr style="width:85%;" />
+            <div class="nhamoi">
+                @foreach (var song in Model)
+                {
+                    <div class="audion">
+                        <a href="@Url.Action("Details", "Song", new { id = song.iDmusic })">
+                            <img class="imgg" src="@song.Image" alt="@song.DisplayName" />
+                        </a>
+                        <p class="per-r">
+                            <a class="title" href="@Url.Action("Details", "Song", new { id = song.iDmusic })">
+                                @song.DisplayName
+                            </a><br />
+                            @song.casi
+                        </p>
+                    </div>
+                }
+            </div>
+
+        </div>
+
+        <div>
+            <h3 style="margin-left:15px;">Gợi ý cho bạn</h3>
+            <div class="k22" style="margin-left:10px;">
+                <div class="aaaa2">
+                    <a href="nhungbaihatcua.aspx?namecasi=1" style="color:black;text-align:center">
+                        <img class="img-k22" src="/image/landscape-avatar-copy-4-15912036198111330174400-crop-15912037063321439019614.jpg" alt="Bích Phương" />
+                        <p>Những bài hát hay nhất của Bích Phương</p>
+                    </a>
+                </div>
+                <div class="aaaa2">
+                    <a href="nhungbaihatcua.aspx?namecasi=2" style="color:black;text-align:center">
+                        <img class="img-k22" src="/image/123.jpg" alt="Đen Vâu" />
+                        <p>Những bài hát hay nhất của Đen Vâu</p>
+                    </a>
+                </div>
+                <div class="aaaa2">
+                    <a href="nhungbaihatcua.aspx?namecasi=3" style="color:black;text-align:center">
+                        <img class="img-k22" src="/image/1333.jpg" alt="Vũ" />
+                        <p>Những bài hát hay nhất của Vũ</p>
+                    </a>
+                </div>
+                <div class="aaaa2">
+                    <a href="nhungbaihatcua.aspx?namecasi=4" style="color:black;text-align:center">
+                        <img class="img-k22" src="/image/a9ts.jpg" alt="Hoàng Dũng" />
+                        <p>Những bài hát hay nhất của Hoàng Dũng</p>
+                    </a>
+                </div>
+                <div class="aaaa2">
+                    <a href="nhungbaihatcua.aspx?namecasi=5" style="color:black;text-align:center">
+                        <img class="img-k22" src="/image/af901b4457bbf85a9e7e6754bdb71c44.jpg" alt="Đức Phúc" />
+                        <p>Những bài hát hay nhất của Đức Phúc</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

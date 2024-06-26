@@ -1,0 +1,182 @@
+﻿@model IEnumerable<PlayMusic.Models.tblMusic>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .section {
+        flex: 1;
+        width: 300px;
+        height: 300px;
+        margin: 10px;
+        text-align: center;
+    }
+
+        .section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    .section1 {
+        flex: 1;
+        width: 800px;
+        height: 200px;
+        margin: 10px;
+        text-align: center;
+    }
+
+        .section1 img {
+            width: 800px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .section h2 {
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+
+    .music-list-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .music-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        flex: 1;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+        .music-list .row {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .music-list .item {
+            width: calc(20% - 20px);
+            max-width: 200px;
+            margin: 0 10px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .music-list img {
+            width: 100%;
+            height: 100px; /* Kích thước ảnh là 100x100 pixels */
+            object-fit: cover; /* Đảm bảo ảnh lấp đầy khu vực */
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        .music-list .item a {
+            text-decoration: none;
+            color: black;
+            display: block;
+            text-align: center;
+        }
+
+        .music-list .item span {
+            display: block;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+</style>
+
+<div class="container">
+    <div class="section">
+        <a href="#"><img src="~/Anh/den.png" alt="V-POP HIT"></a>
+        <h2><a href="#">Tuyệt Đỉnh V-POP HIT!</a></h2>
+    </div>
+    <div class="section">
+        <a href="#"><img src="~/Anh/nhacdo.png" alt="V-POP Hot"></a>
+        <h2><a href="#">V-POP Tháng 3 Có Gì Hot?</a></h2>
+    </div>
+    <div class="section">
+        <a href="#"><img src="~/Anh/sontung.png" alt="Nhạc Mới Mỗi Ngày"></a>
+        <h2><a href="#">Mix Nhạc Mới Mỗi Ngày</a></h2>
+    </div>
+</div>
+
+<div class="container">
+    <div class="section1">
+        <a href="#"><img src="~/Anh/tonghop.jpg" alt="Favorite Music"></a>
+        <h2><a href="#">Danh Sách Nhạc Được Yêu Thích</a></h2>
+    </div>
+    <div class="section music-list">
+        @if (Model != null && Model.Any())
+        {
+            int itemCount = 0;
+            foreach (var song in Model)
+            {
+                if (itemCount % 5 == 0)
+                {
+                    if (itemCount != 0)
+                    {
+                    @:</div><div class="row">
+                    }
+                    else
+                    {
+                        @:<div class="row">
+                        }
+                    }
+
+                    <div class="item">
+                        <a href="@Url.Action("Details", "Song", new { id = song.iDmusic })">
+                            <img src="@Url.Content(song.Image)" alt="@song.DisplayName">
+                            <span>@song.DisplayName - @song.casi</span>
+                        </a>
+                    </div>
+                    itemCount++;
+                }
+            @:</div> <!-- Close the last row -->
+        }
+        else
+        {
+            <p>Không có bài hát nào để hiển thị.</p>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <!-- Các script cụ thể cho view này nếu cần -->
+}

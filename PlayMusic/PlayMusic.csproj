@@ -1,0 +1,358 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EE56D2E5-8397-4291-9EED-D814D605493A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PlayMusic</RootNamespace>
+    <AssemblyName>PlayMusic</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44327</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.Functions, Version=1.5.0.0, Culture=neutral, PublicKeyToken=dbe58f97a0872a64, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.Functions.1.5.0\lib\net46\EntityFramework.Functions.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Anh\den.png" />
+    <Content Include="Anh\nhacdo.png" />
+    <Content Include="Anh\tonghop.jpg" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Global.asax" />
+    <Content Include="image\1.jpg" />
+    <Content Include="image\123.jpg" />
+    <Content Include="image\1333.jpg" />
+    <Content Include="image\1499324135315_640.jpg" />
+    <Content Include="image\1499536106732_640.jpg" />
+    <Content Include="image\1561965663111.jpg" />
+    <Content Include="image\1566988500226.jpg" />
+    <Content Include="image\1607418107798.jpg" />
+    <Content Include="image\1614589505470_640.jpg" />
+    <Content Include="image\1a99f9d8d8c5563e3893d9f10cd8689a.jpg" />
+    <Content Include="image\2.jpg" />
+    <Content Include="image\25ba89a65c8067be5be34166f045b99e.jpg" />
+    <Content Include="image\3.jpg" />
+    <Content Include="image\39349a90229b3f4ca9eafa69f9106932.jpg" />
+    <Content Include="image\3b9a2890dd6262033a56614bcf22c227.jpg" />
+    <Content Include="image\3eaa1bb8b1750cf10c39d568cc061c8e.jpg" />
+    <Content Include="image\4fda0068d6821c35e89a6d405b314ba0.jpg" />
+    <Content Include="image\555.png" />
+    <Content Include="image\6de39ea5c9b5e0b38801acb27c3fc15b.jpg" />
+    <Content Include="image\8246ddb97803da19aaa7cb5039e26671.jpg" />
+    <Content Include="image\877eb506f1c9cb315ebb307c9db12b40.jpg" />
+    <Content Include="image\92d59a48d9df9e94275b30a0718d5121.jpg" />
+    <Content Include="image\a9ts.jpg" />
+    <Content Include="image\af901b4457bbf85a9e7e6754bdb71c44.jpg" />
+    <Content Include="image\anhnag.png" />
+    <Content Include="image\b32dab34664c9a7f0d1f837b4babd4bb.jpg" />
+    <Content Include="image\b9df30e091836ebcb4dea2bb40c34c5e.jpg" />
+    <Content Include="image\c9ac2a925af0491756d57fe41c6f9460.jpg" />
+    <Content Include="image\CamOn1-DenBien-6131156.mp3" />
+    <Content Include="image\coemcho.jpg" />
+    <Content Include="image\d0714f6cfd28af5d7518d582285f3312.jpg" />
+    <Content Include="image\duanhauditron.jpg" />
+    <Content Include="image\Duanhauditron.mp3" />
+    <Content Include="image\EmSaiRoi-Thuongvo,ACV.mp3" />
+    <Content Include="image\emsairoi.jpg" />
+    <Content Include="image\gaclo.jpg" />
+    <Content Include="image\Het Thoi - Ngot.mp3" />
+    <Content Include="image\landscape-avatar-copy-4-15912036198111330174400-crop-15912037063321439019614.jpg" />
+    <Content Include="image\maxresdefault %281%29.jpg" />
+    <Content Include="image\maxresdefault %2810%29.jpg" />
+    <Content Include="image\maxresdefault %2811%29.jpg" />
+    <Content Include="image\maxresdefault %2812%29.jpg" />
+    <Content Include="image\maxresdefault %282%29.jpg" />
+    <Content Include="image\maxresdefault %283%29.jpg" />
+    <Content Include="image\maxresdefault %284%29.jpg" />
+    <Content Include="image\maxresdefault %285%29.jpg" />
+    <Content Include="image\maxresdefault %286%29.jpg" />
+    <Content Include="image\maxresdefault %287%29.jpg" />
+    <Content Include="image\maxresdefault %288%29.jpg" />
+    <Content Include="image\maxresdefault %289%29.jpg" />
+    <Content Include="image\maxresdefault.jpg" />
+    <Content Include="image\mqdefault.jpg" />
+    <Content Include="image\nagtho.jpg" />
+    <Content Include="image\ngot-14.jpg" />
+    <Content Include="image\Sao Cha Khong OST Bo Gia 2021_ - Phan Ma.mp3" />
+    <Content Include="image\TA VA NANG MASTER.mp3" />
+    <Content Include="image\Tab Harmonica - Ánh Nắng Của Anh %28Chờ Em Đến Ngày Mai OST%29 - Duc Phuc.png" />
+    <Content Include="image\TD MUSIC WEB.png" />
+    <Content Include="image\template.png" />
+    <Content Include="image\template1.png" />
+    <Content Include="image\template12.jpg" />
+    <Content Include="image\Tinh Ban Dieu Ky - AMee_ Ricky Star_ Lan.mp3" />
+    <Content Include="image\trinh_cong_son_bai_hat.jpg" />
+    <Content Include="image\tải x22uống.jpg" />
+    <Content Include="image\tải xuống.jfif" />
+    <Content Include="image\tải xuống.jpg" />
+    <Content Include="image\Untitled.png" />
+    <Content Include="Models\DBmodel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBmodel.edmx</DependentUpon>
+      <LastGenOutput>DBmodel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DBmodel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBmodel.edmx</DependentUpon>
+      <LastGenOutput>DBmodel.cs</LastGenOutput>
+    </Content>
+    <Content Include="music\AnhDechCanGiNhieuNgoaiEm-DenVuThanhDong-5749937.mp3" />
+    <Content Include="music\AnhNangCuaAnhChoEmDenNgayMaiOst-DucPhuc-4701036.mp3" />
+    <Content Include="music\BaiNayChillPhet-DenMIN-5978903.mp3" />
+    <Content Include="music\BuaYeu-BichPhuong-5472208.mp3" />
+    <Content Include="music\CamOn1-DenBien-6131156.mp3" />
+    <Content Include="music\ChoAnhNhe-HoangDungHoangRob-4475500.mp3" />
+    <Content Include="music\ChuyenCuBoQua-BichPhuong-5832993.mp3" />
+    <Content Include="music\CoEmChoOrchestraVersion-MIN-5130422.mp3" />
+    <Content Include="music\CoGaiBanBen-DenLynkLee-4570416.mp3" />
+    <Content Include="music\CoKhiNaoRoiXa-NukanTranTungAnh-2456751.mp3" />
+    <Content Include="music\CoSaoGioLaiChiaXa-BichPhuong-5079070.mp3" />
+    <Content Include="music\DemThayTaLaThacDo-NgocLan_r3kt.mp3" />
+    <Content Include="music\DiDuDuaDi-BichPhuong-6059493.mp3" />
+    <Content Include="music\Duanhauditron.mp3" />
+    <Content Include="music\EmSaiRoi-Thuongvo,ACV.mp3" />
+    <Content Include="music\GacLaiAuLo-DaLABMiuLe-6360815.mp3" />
+    <Content Include="music\GuiAnhXaNho-BichPhuong-4539289.mp3" />
+    <Content Include="music\HaiTrieuNam-DenBien-6007307.mp3" />
+    <Content Include="music\Het Thoi - Ngot.mp3" />
+    <Content Include="music\HoaNoKhongMau1-HoaiLam-6281704.mp3" />
+    <Content Include="music\index.css" />
+    <Content Include="music\LaLung-Vu-4749614.mp3" />
+    <Content Include="music\Lan Cuoi - Ngot %281%29.mp3" />
+    <Content Include="music\Lan Cuoi - Ngot.mp3" />
+    <Content Include="music\logincss.css" />
+    <Content Include="music\LoiNho1-DenPhuongAnhDao-6129215.mp3" />
+    <Content Include="music\masterpage.css" />
+    <Content Include="music\MuoiNamLonXon3-DenNgocLinh-5869931.mp3" />
+    <Content Include="music\NangTho-HoangDung-6413381.mp3" />
+    <Content Include="music\NiuDuyen-LeBaoBinh-6872127.mp3" />
+    <Content Include="music\NuHongMongManh-BichPhuong-3495288.mp3" />
+    <Content Include="music\PhaiDauCuocTinh-BichPhuong-3666934.mp3" />
+    <Content Include="music\Quay Lai Lai Yeu - Ngo Kien Huy_ Vuong A.mp3" />
+    <Content Include="music\RuEmTungNgonXuanNong-NgocLan_3tkj8.mp3" />
+    <Content Include="music\Seorita-ShawnMendesCamilaCabello-6163670.mp3" />
+    <Content Include="music\SongGioDJXuanNuiRemix-DJXuanNuiKICMJackG5R-6035315.mp3" />
+    <Content Include="music\Suot Doi Khong Xung - Khai Dang.mp3" />
+    <Content Include="music\TaVaNang-JGKiDDen-3765639.mp3" />
+    <Content Include="music\TuyAm-XesiMasewNhatNguyen-5132651.mp3" />
+    <Content Include="music\UotMi-NgocLan_3yb7r.mp3" />
+    <Content Include="music\upload.css" />
+    <Content Include="music\YeuDauTanTheo-NgocLan_3tkj6.mp3" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\SongController.cs" />
+    <Compile Include="Controllers\TrangChuController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\bxh.cs">
+      <DependentUpon>DBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\chude.cs">
+      <DependentUpon>DBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBmodel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBmodel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBmodel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBmodel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBmodel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\nhactt.cs">
+      <DependentUpon>DBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>DBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblAccount.cs">
+      <DependentUpon>DBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblMusic.cs">
+      <DependentUpon>DBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Theloai.cs">
+      <DependentUpon>DBmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <EntityDeploy Include="Models\DBmodel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DBmodel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DBmodel.edmx.diagram">
+      <DependentUpon>DBmodel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Anh\sontung.png" />
+    <Content Include="image\image.lnk" />
+    <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Register\Register.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\TrangChu\Index.cshtml" />
+    <Content Include="Views\Song\Index.cshtml" />
+    <Content Include="Views\Song\Details.cshtml" />
+    <Content Include="Views\Home\NewMusic.cshtml" />
+    <Content Include="Views\Home\Genres.cshtml" />
+    <Content Include="Views\Home\Top100.cshtml" />
+    <Content Include="Views\Home\Artists.cshtml" />
+    <Content Include="Views\Home\Contribute.cshtml" />
+    <Content Include="Views\Home\ContributedList.cshtml" />
+    <Content Include="Views\Home\ManageUserMusic.cshtml" />
+    <Content Include="Views\Home\ManageDisplayedSongs.cshtml" />
+    <Content Include="Views\Home\ManageViews.cshtml" />
+    <Content Include="Views\Home\ManageFavoriteAlbums.cshtml" />
+    <Content Include="Views\Home\ArtistSongs.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\BundleConfig\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55021</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44327/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

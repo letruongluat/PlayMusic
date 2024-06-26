@@ -1,0 +1,77 @@
+﻿@model PlayMusic.Models.tblMusic
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<style>
+    .bang {
+        width: 100%;
+        border: none;
+    }
+
+    .audion {
+        display: flex;
+        align-items: center;
+    }
+
+    .imgg {
+        max-width: 200px;
+        border-radius: 10px;
+    }
+
+    .klga {
+        margin-left: 20px;
+    }
+
+    .per-r {
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+
+    .nhac {
+        width: 200%;
+        margin-top: 10px;
+    }
+
+    .lyric {
+        margin-top: 20px;
+    }
+
+    .lyric-tt {
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+
+    .lyric-tt2 {
+        white-space: pre-line; /* Đảm bảo giữ nguyên các dấu xuống dòng */
+    }
+</style>
+
+<div class="container">
+    <h3 style="margin-left: 10px">
+        <a href="@Url.Action("Index", "Home")" style="color: black">Trang chủ</a> - Bài hát - @Model.DisplayName
+    </h3>
+    <hr style="width: 85%" />
+
+    <div class="audion">
+        <div>
+            <img class="imgg" src="@Model.Image" alt="@Model.DisplayName" />
+        </div>
+        <div class="klga">
+            <p class="per-r">@Model.DisplayName</p>
+            <p>Ca sĩ: @Model.casi</p>
+
+          
+            <audio autoplay="autoplay" src="@Url.Content("~/music/" + Model.Data)" controls="controls" class="nhac"></audio>
+        
+                        
+
+        </div>
+    </div>
+
+    <div class="lyric">
+        <p class="lyric-tt">Lời Bài Hát:</p>
+        <p class="lyric-tt2">@Html.Raw(Model.Cotenttype.Replace("\n", "<br />"))</p>
+    </div>
+</div>

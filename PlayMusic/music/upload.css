@@ -1,0 +1,114 @@
+﻿@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+.row {
+    display: grid;
+    grid-template-columns:1fr  3fr;
+}
+.taochude { 
+    background: #FFFFFF;
+    max-width: 100%;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.tbnthemchude {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #4CAF50;
+    width: 45%;
+    border: 0;
+    margin: 2px;
+    padding: 10px;
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+}
+.btnxoa {
+    background:#FFFFFF ;
+    border: 0;
+    outline: 0;
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+    padding: 0px;
+
+}
+.form-fileup {
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 80%;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+p
+{
+margin:10px 0 0 9px;
+}
+.theh3 {
+    font-family: "Roboto", sans-serif;
+    font-size:200%;
+    margin: 0 0 20px 0;
+}
+
+.fileUpload {
+    font-family: "Roboto", sans-serif;
+    background-color: #4CAF50;
+    border-radius: 0;
+    color: #fff;
+    font-size: 100%;
+    height: 100%;
+    left: 0;
+    margin: 0 0 0 15px;
+    width: 42%
+}
+.imageupload {
+    font-family: "Roboto", sans-serif;
+    background-color: #4CAF50;
+    border-radius: 0;
+    color: #fff;
+    font-size: 100%;
+    height: 100%;
+    left: 0;
+    margin: 0 0 0 15px;
+    width: 42%
+}
+
+.txtname, .txtnd {
+    width: 35%;
+    outline: 0;
+    background: #f2f2f2;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 12px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.txtnd {
+    width: 50%;
+}
+.btnUpload {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #4CAF50;
+    width: 25%;
+    border: 0;
+    margin:2px;
+    padding: 10px;
+
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+.thongbao
+{   background-color:black;
+    position:relative;
+    height:500px;
+    width:500px;
+    z-index:100;
+    top:-500px;
+}

@@ -1,0 +1,122 @@
+﻿@model PlayMusic.Models.tblAccount
+
+@{
+    ViewBag.Title = "Đăng Ký Tài khoản";
+}
+
+<div class="main-content">
+    <div class="register-box">
+        <h2>Đăng Ký Tài khoản</h2>
+        @using (Html.BeginForm("Register", "Register", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.IDacount, new { @class = "form-control", placeholder = "Username", required = "required" })
+                @Html.ValidationMessageFor(model => model.IDacount, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.PasswordFor(model => model.Password, new { @class = "form-control", placeholder = "Password", required = "required" })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = "Họ và tên", required = "required" })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.email, new { @class = "form-control", placeholder = "Email", required = "required", type = "email" })
+                @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.ngaysinh, new { @class = "form-control", type = "date", placeholder = "Ngày Sinh", required = "required" })
+                @Html.ValidationMessageFor(model => model.ngaysinh, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.gioitinh, "Giới tính")
+                <div class="gender">
+                    <label>
+                        @Html.RadioButtonFor(model => model.gioitinh, "Nam", new { @required = "required" }) Nam
+                    </label>
+                    <label>
+                        @Html.RadioButtonFor(model => model.gioitinh, "Nữ", new { @required = "required" }) Nữ
+                    </label>
+                </div>
+                @Html.ValidationMessageFor(model => model.gioitinh, "", new { @class = "text-danger" })
+            </div>
+
+            <button type="submit" class="btn btn-primary">ĐĂNG KÝ</button>
+
+
+
+
+        }
+
+
+        @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+        {
+            <p style="color: red;">@ViewBag.ErrorMessage</p>
+        }
+
+        <p>Đã có tài khoản? <a href="@Url.Action("Index", "Login")">Đăng Nhập</a></p>
+    </div>
+</div>
+
+<style>
+    .register-box {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        margin: auto;
+        text-align: center;
+    }
+
+        .register-box input[type="text"],
+        .register-box input[type="password"],
+        .register-box input[type="email"],
+        .register-box input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .register-box button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+            .register-box button:hover {
+                background-color: #218838;
+            }
+
+        .register-box a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+            .register-box a:hover {
+                text-decoration: underline;
+            }
+
+    .gender {
+        text-align: left;
+        margin: 10px 0;
+    }
+
+        .gender label {
+            margin-right: 20px;
+        }
+</style>
