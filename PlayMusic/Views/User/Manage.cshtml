@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Quản lý người dùng";
+}
+
+<div class="form-container">
+    <h2>Quản Lý Người Dùng</h2>
+    <form>
+        <label for="username">Tên Người Dùng</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="status">Trạng Thái</label>
+        <input type="text" id="status" name="status" required>
+
+        <label for="avatar">Avatar</label>
+        <input type="text" id="avatar" name="avatar">
+
+        <label>Vai Trò</label>
+        <div>
+            <input type="checkbox" id="admin" name="role" value="Admin">
+            <label for="admin">Admin</label>
+            <input type="checkbox" id="user" name="role" value="User">
+            <label for="user">Người Dùng</label>
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
