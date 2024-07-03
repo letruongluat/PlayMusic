@@ -1,1 +1,39 @@
-﻿
+﻿@model PlayMusic.Models.tblMusic
+
+<div class="form-fileup">
+    <form asp-action="Contribute" method="post" enctype="multipart/form-data">
+        <h3 class="theh3">Upload Nhạc</h3>
+        <p>Chọn chủ đề âm nhạc</p>
+        <select asp-for="chude" asp-items="ViewBag.Genres"></select>
+
+        <p>File Âm Thanh:</p>
+        <input type="file" name="AudioFile" class="fileUpload" />
+        <span asp-validation-for="Data" class="text-danger"></span>
+
+        <p>Hình ảnh:</p>
+        <input type="file" name="ImageFile" class="imageupload" />
+        <span asp-validation-for="Image" class="text-danger"></span>
+
+        <p>Tên Âm Thanh:</p>
+        <input asp-for="DisplayName" class="txtname" />
+        <span asp-validation-for="DisplayName" class="text-danger"></span>
+
+        <p>Tác Giả:</p>
+        <input asp-for="casi" class="txtname" />
+        <span asp-validation-for="casi" class="text-danger"></span>
+
+        <p>Nội Dung:</p>
+        <textarea asp-for="Lyrics" class="txtnd" rows="10"></textarea>
+        <span asp-validation-for="Lyrics" class="text-danger"></span>
+
+        <button type="submit" class="btnUpload">Upload</button>
+
+        <div>
+            @if (ViewBag.Message != null)
+            {
+            <span>@ViewBag.Message</span>
+            }
+        </div>
+    </form>
+</div>
+
