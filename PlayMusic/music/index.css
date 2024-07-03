@@ -193,3 +193,156 @@ th , tr , td
     font-weight:600;
     text-align:center;
 }
+
+
+
+/* Styles for the User Management page */
+.user-management-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: auto;
+}
+
+    .user-management-container h2 {
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .user-management-container label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .user-management-container input[type="text"],
+    .user-management-container input[type="email"],
+    .user-management-container input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    .user-management-container input[type="submit"] {
+        background-color: #0066cc;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+        .user-management-container input[type="submit"]:hover {
+            background-color: #005bb5;
+        }
+
+    .user-management-container div {
+        margin-bottom: 10px;
+    }
+
+    .user-management-container input[type="checkbox"] {
+        margin-right: 5px;
+    }
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.header {
+    background-color: #0066cc;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .header .left, .header .center, .header .right {
+        display: flex;
+        align-items: center;
+    }
+
+        .header .left a, .header .right a {
+            color: white;
+            margin-right: 20px;
+            text-decoration: none;
+            padding: 10px 15px;
+            background-color: #005bb5;
+            border-radius: 5px;
+        }
+
+            .header .left a:hover, .header .right a:hover {
+                background-color: #004999;
+            }
+
+    .header .center {
+        flex-grow: 1;
+        justify-content: center;
+    }
+
+        .header .center input[type="text"] {
+            width: 200px;
+            padding: 5px;
+        }
+
+        .header .center button {
+            padding: 5px 10px;
+        }
+
+.content {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar {
+    background-color: #0066cc;
+    width: 200px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-item {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    background-color: #0066cc;
+    border-radius: 5px;
+}
+
+    .sidebar a:hover {
+        background-color: #005bb5;
+    }
