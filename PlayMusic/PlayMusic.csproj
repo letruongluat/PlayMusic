@@ -291,6 +291,7 @@
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\SongController.cs" />
     <Compile Include="Controllers\TrangChuController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -376,6 +377,8 @@
     <Content Include="Views\Home\ManageViews.cshtml" />
     <Content Include="Views\Home\ManageFavoriteAlbums.cshtml" />
     <Content Include="Views\Home\ArtistSongs.cshtml" />
+    <Content Include="Views\Home\ManageAccess.cshtml" />
+    <Content Include="Views\User\Manage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -51,7 +51,10 @@ namespace PlayMusic.Controllers
             return View(songs);
         }
 
-
+        public ActionResult ManageAccess()
+        {
+            return View();
+        }
 
       
         [HttpGet]
