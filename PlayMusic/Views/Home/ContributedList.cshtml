@@ -1,1 +1,107 @@
 ﻿
+@model List<PlayMusic.Models.tblMusic>
+
+@{
+    ViewBag.Title = "Danh sách nhạc đã đóng góp";
+}
+<style>
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .table th, .table td {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 8px;
+        }
+
+    .hinhanh img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+    }
+
+    .btntt {
+        display: flex;
+        justify-content: center;
+    }
+
+        .btntt button {
+            margin: 5px;
+            padding: 8px 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+    .btnsua {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    .btnxoa {
+        background-color: #f44336;
+        color: white;
+    }
+</style>
+<div class="danhsach">
+    <h3>Danh sách nhạc đã đóng góp</h3>
+    <hr style="width: 85%" />
+
+    <table class="table table-striped bang">
+        <thead>
+            <tr>
+                <th>Hình ảnh</th>
+                <th>Tên Bài Hát</th>
+                <th>Người Sáng Tác</th>
+                <th>Âm Thanh</th>
+                <th>Nội Dung</th>
+                <th>Chức Năng</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var music in Model)
+            {
+                <tr>
+                    <td>
+                        <div class="hinhanh">
+                            <a href="#">
+                                <img src="@Url.Content(music.Image)">
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="casi">
+                            <p class="per-r">@music.DisplayName</p>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="casi">
+                            <p class="per-r">@music.casi</p>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="audion1">
+                            <audio src="@Url.Content("~/music/" + music.Data)" controls="controls"></audio>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="nd">
+                            <p>@music.Cotenttype.Replace("\n", "\n\n")</p>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="btntt">
+                            <a href="@Url.Action("EditMusic", "Music", new { id = music.iDmusic })">
+                                <button class="btnsua">Sửa</button>
+                            </a>
+                            <a href="@Url.Action("DeleteMusic", "Music", new { id = music.iDmusic, name = music.DisplayName })">
+                                <button class="btnxoa">Xóa</button>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

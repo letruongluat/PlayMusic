@@ -1,5 +1,7 @@
 ﻿using PlayMusic.Models;
+using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 
 namespace PlayMusic.Controllers
@@ -50,17 +52,69 @@ namespace PlayMusic.Controllers
         }
 
 
-
+        [HttpGet]
         public ActionResult Contribute()
         {
-            return View();
+            ViewBag.Genres = GetMusicGenres();
+            return View(new tblMusic());
         }
 
+        [HttpPost]
+        public ActionResult Contribute(tblMusic model, HttpPostedFileBase AudioFile, HttpPostedFileBase ImageFile)
+        {
+            if (ModelState.IsValid)
+            {
+                // Lưu file âm thanh
+                if (AudioFile != null && AudioFile.ContentLength > 0)
+                {
+                    var audioFileName = System.IO.Path.GetFileName(AudioFile.FileName);
+                    var audioPath = Server.MapPath("~/music/") + audioFileName;
+                    AudioFile.SaveAs(audioPath);
+                    model.Data = audioFileName;
+                    model.Cotenttype = AudioFile.ContentType;
+                }
+
+                // Lưu file hình ảnh
+                if (ImageFile != null && ImageFile.ContentLength > 0)
+                {
+                    var imageFileName = System.IO.Path.GetFileName(ImageFile.FileName);
+                    var imagePath = Server.MapPath("~/image/") + imageFileName;
+                    ImageFile.SaveAs(imagePath);
+                    model.Image = imageFileName;
+                }
+
+                model.luotnghe = 0;
+
+                // Lưu vào cơ sở dữ liệu
+                db.tblMusics.Add(model);
+                db.SaveChanges();
+
+                ViewBag.Message = "Upload thành công!";
+                ViewBag.Genres = GetMusicGenres();
+                return View(new tblMusic());
+            }
+
+            ViewBag.Genres = GetMusicGenres();
+            return View(model);
+        }
+
+        private IEnumerable<SelectListItem> GetMusicGenres()
+        {
+            return db.chudes.Select(t => new SelectListItem
+            {
+
+                Value = t.IDchude.ToString(),
+                Text = t.theloai1
+
+
+            }).ToList();
+        }
         public ActionResult ContributedList()
         {
-            return View();
-        }
+            var contributelist = db.tblMusics.ToList();
+            return View(contributelist);
 
+        }
         public ActionResult ManageUserMusic()
         {
             var users = db.tblAccounts.ToList();
